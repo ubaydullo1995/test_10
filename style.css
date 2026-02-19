@@ -1,5 +1,539 @@
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--minus-color);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.max-width {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--H1text-color);
+}
+
+:root {
+    /* BORDER FIX — to‘g‘rilandi */
+    --border-1: 1px solid black;
+
+    /* COLOR VARIABLES */
+    --blue-color: #3d51e3;
+    --H1text-color: #0c1187;
+    --dark-color: #ffffffb3;
+    --wait-color: #fff;
+    --black-color: #000;
+    --rwrwrw-color: #515151;
+    --minus-color: #f6f6f6;
+    --blackDark-color: #929090;
+
+
+    /* RESPONSIVE FONT-SIZES */
+    --font-size-16: clamp(14px, 1.2vw, 16px);
+    --font-size-18: clamp(15px, 1.4vw, 18px);
+    --font-size-20: clamp(16px, 1.6vw, 20px);
+    --font-size-25: clamp(18px, 2vw, 25px);
+    --font-size-30: clamp(22px, 2.5vw, 30px);
+    --font-size-35: clamp(26px, 3vw, 35px);
+    --font-size-40: clamp(30px, 3.5vw, 40px);
+    --font-size-45: clamp(34px, 4vw, 45px);
+    --font-size-50: clamp(38px, 4.5vw, 50px);
+    --font-size-55: clamp(42px, 5vw, 55px);
+    --font-size-60: clamp(46px, 6vw, 60px);
+
+    /* FONT WEIGHTS (tartiblangan / to‘g‘ri) */
+    --font-weight-100: 100;
+    --font-weight-200: 200;
+    --font-weight-300: 300;
+    --font-weight-400: 400;
+    --font-weight-500: 500;
+    --font-weight-600: 600;
+    --font-weight-700: 700;
+    --font-weight-800: 800;
+    --font-weight-900: 900;
+
+    /* RESPONSIVE GAP */
+    /* --gap-10: clamp(6px, 1vw, 10px);
+    --gap-20: clamp(12px, 2vw, 20px);
+    --gap-30: clamp(18px, 3vw, 30px);
+    --gap-40: clamp(24px, 4vw, 40px);
+    --gap-50: clamp(30px, 5vw, 50px); */
+    --gap-10: 10px;
+    --gap-15: 15px;
+    --gap-20: 20px;
+    --gap-30: 30px;
+    --gap-40: 40px;
+    --gap-50: 50px;
+
+}
+
+li,
+a,
+button,
+i {
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* granits_margin_left */
+.granits_margin_left {
+    margin-left: 100px;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100vh;
+    background-color: var(--wait-color); 
+}
+
+.inBook {
+    margin: 50px auto 150px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--blue-color);
+    color: var(--wait-color);
+    border: 1px solid var(--blue-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    font-size: 20px;
+    transition: all .4s ease;
+}
+
+.inBook:hover {
+    color: var(--blue-color);
+    background-color: var(--wait-color);
+    border: 1px solid var(--blue-color);
+}
+
+
+.header_li {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    margin: 10px auto;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .4s ease;
+    color: var(--rwrwrw-color);
+}
+
+.header_li:hover {
+    background-color: var(--blue-color);
+    color: var(--wait-color);
+}
+
+.header_li:active {
+    background-color: var(--blue-color);
+    color: var(--wait-color);
+}
+
+/* Welcome */
+.welcome {
+    margin-bottom: 20px;
+}
+
+.welcome_title {
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--black-color);
+}
+
+.welcome_info {
+    gap: 30px;
+}
+
+.welcome_info i {
+    font-size: 20px;
+    color: var(--rwrwrw-color);
+}
+
+.welcome_info>img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* myStudents */
+.gap {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+}
+
+.myStudents_title {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.myStudents_title>h2 {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--rwrwrw-color);
+}
+
+.myStudents_title>a {
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--blue-color);
+}
+
+.myStudents_title>a:hover {
+    text-decoration: underline;
+}
+
+/* myStudens_boxs */
+.myStudens_boxs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.myStudens_box {
+    padding: 20px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+    height: 100px;
+    background-color: var(--wait-color);
+}
+
+.myStudens_box>img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;             
+}
+
+.myStudens_box_title h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: var(--black-color);
+}
+
+.myStudens_box_title p {
+    font-size: 14px;
+    color: var(--rwrwrw-color);
+}
+
+/* classesJobs_boxs */
+.classesJobs_boxs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.myClasses, .jobs {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    background-color: var(--wait-color);
+}
+
+.myClasses_start,
+.jobs_start {
+    margin-bottom: 40px;
+}
+
+.myClasses_start h3,
+.jobs_start h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--black-color);
+}
+
+
+.myClasses_start_icens,
+.jobs_start_icens {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.myClasses_start_icens i,
+.jobs_start_icens i {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    border-radius: 14px;
+    background-color: #d4f1f6;
+    color: var(--blue-color);
+}
+
+/* info_students */
+.info_students {
+    padding: 20px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+}
+
+.bc_color_darkBlack {
+    background-color: #f6f6f6;
+}
+
+.bc_color_darkblue {
+    background-color: #e9f3fc;
+}
+
+.info_students p {
+    line-height: 1.5;
+    color: var(--blackDark-color);
+}
+
+.info_students p i {
+    font-size: 20px;
+}
+
+.info_students_top {
+    margin-bottom: 15px;
+}
+
+.info_student {
+    margin-bottom: 15px;
+}
+
+.info_student_h3 {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.info_students_calendar {
+     color: var(--blackDark-color);
+}
+
+.top_bottom {
+    margin: 15px 0;
+}
+
+.info_students_bottom {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+}
+
+.info_students_bottom img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info_students_bottom h3 {
+    font-size: 18px;
+}
+
+ .bigCenter_imag {
+    margin-bottom: 20px;
+ }
+
+.big_img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+/* Account */
+.account_title {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.account_title>h2 {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--rwrwrw-color);
+}
+
+.account_title>a {
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--blue-color);
+}
+
+.account_title>a:hover {
+    text-decoration: underline;
+}
+
+/* account_dollor */
+.account_dollor {
+    padding: 30px 20px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    height: 100px;
+    background-color: var(--wait-color);
+}
+
+.account_dollor h1{
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.account_dollor a {
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--blue-color);
+}
+
+.account_dollor>a:hover {
+    text-decoration: underline;
+}
+
+/* payments */
+.payments {
+    padding: 20px;
+    background-color: var(--wait-color);
+    border-radius: 14px;
+    margin-bottom: 20px;
+}
+
+.payments_title {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.payments_title h2{
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--rwrwrw-color);
+}
+
+.payments_title>a {
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--blue-color);
+}
+
+.payments_title>a:hover {
+    text-decoration: underline;
+}
+
+.peoples_item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.peoples_item {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+}
+
+.peoples {
+    margin: 40px 0;
+}
+
+.peoples_name h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.peoples_name p {
+    color: var(--blackDark-color);
+}
+
+.payments_dollor {
+    font-size: 18px;
+    border-radius: 14px;
+    color: var(--blue-color);
+}
+
+/* kalendar */
+.kalendars {
+    padding: 20px;
+    background-color: var(--wait-color);
+    border-radius: 14px;
+}
+
+.kalendars p {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.kalendar_title {
+    margin-bottom: 30px;
+}
+
+.kalendar_title h1 {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--black-color);
+}
+
+.kalendar_title i {
+    font-size: 22px;
+    color: var(--blackDark-color);
+    transform: rotate(90deg);
+}
+
+th {
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
 }
